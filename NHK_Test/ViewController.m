@@ -83,6 +83,16 @@
         [self.healthStore saveObject:countSample withCompletion:^(BOOL success, NSError *error) {
             if (success) {
                 NSLog(@"SAVED??");
+                
+                UIAlertView *showSuccessAlert = [[UIAlertView alloc]
+                                                 initWithTitle:@"Saved to the Health App!"
+                                                 message:[NSString stringWithFormat:@"Saved data to %@", @"FLIGHTS CLIMBED"]
+                                                 delegate:self
+                                                 cancelButtonTitle:@"OK"
+                                                 otherButtonTitles:nil];
+                
+                [showSuccessAlert show];
+                
             } else {
                 NSLog(@"ERROR: %@", error.localizedDescription);
             }
